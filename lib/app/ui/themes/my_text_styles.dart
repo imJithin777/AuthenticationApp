@@ -38,7 +38,7 @@ static const TextStyle create = TextStyle(fontSize: 12,
 );
 
 static const TextStyle contentBlackText = TextStyle(fontSize: 14,
-    color: Color(0xdff363A3A), fontFamily: 'Montserrat_Black'
+    color: MyColors.contentBlackColor, fontFamily: 'Montserrat_Black'
 );
 
 static const TextStyle labelstyle=TextStyle(fontSize: 14,

@@ -81,10 +81,9 @@ class _CommonTextFieldState extends State<CommonTextField> {
   @override
   Widget build(BuildContext context) {
     return Container(
-        //  margin: const EdgeInsets.only(left : 20.0, top: 10.0, right: 20.0),
         child: Theme(
       data: ThemeData(
-        primaryColor: Color(0xFFFDDA00),
+        primaryColor: MyColors.themecolor,
       ),
       child: TextFormField(
         keyboardType: widget.keyboardType,
@@ -113,7 +112,7 @@ class _CommonTextFieldState extends State<CommonTextField> {
             errorBorder: widget.errorborder,
             suffixIcon: widget.sufffixicon != null
                 ? Padding(
-                    padding: EdgeInsets.only(right: 10),
+                    padding: const EdgeInsets.only(right: 10),
                     child: widget.sufffixicon)
                 : widget.password!
                     ? IconButton(
@@ -129,10 +128,10 @@ class _CommonTextFieldState extends State<CommonTextField> {
                           });
                         },
                       )
-                    : SizedBox(),
+                    : const SizedBox(),
             prefixIcon: widget.prefixicon != null
                 ? Padding(
-                    padding: EdgeInsets.only(left: 10),
+                    padding: const EdgeInsets.only(left: 10),
                     child: widget.password!
                         ? IconButton(
                             icon: Icon(

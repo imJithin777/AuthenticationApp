@@ -13,8 +13,7 @@ final bool? resetBottom;
     return Scaffold(
       resizeToAvoidBottomInset: resetBottom,
       backgroundColor: backgroundColor,
-      appBar:appBar != null
-          ?appBar:null,
+      appBar: appBar,
       body: child,
     );
   }
