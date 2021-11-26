@@ -3,7 +3,6 @@ import 'dart:async';
 import 'package:authentication/app/config/globals.dart';
 import 'package:authentication/app/controllers/common/CommonController.dart';
 import 'package:authentication/app/ui/screens/Home/homeScreen.dart';
-import 'package:authentication/app/ui/screens/index.dart';
 import 'package:authentication/app/ui/widgets/alert_dialog.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
@@ -32,14 +31,14 @@ class AuthController extends GetxController {
     phone.text = '';
   }
 
- // Check Phone Validation
+  /// Check Phone Validation **/
   bool validateStructure(String value){
     String  pattern = r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[.!@#\$&*~]).{8,}$';
     RegExp regExp = new RegExp(pattern);
     return regExp.hasMatch(value);
   }
 
-  // Signin Function
+  /// Signin Function **/
   Future<dynamic> login() async {
     print("datas: ${box.read(Globals.CUSTOMERDATAS)}");
     if (box.read(Globals.CUSTOMERDATAS) != null){
@@ -57,28 +56,14 @@ class AuthController extends GetxController {
           init();
         });
       }
-      // CommonController.to.CustomerDatas.forEach((data){
-      //   if (data['email'] == email.text && data['password'] == password.text){
-      //     CommonController.to.ProfileData = data;
-      //     box.write(Globals.CURRENTCUSTOMERDATA, CommonController.to.ProfileData);
-      //     box.write(Globals.IS_LOGIN, true);
-      //     showSnackbar("", "Login Successfull");
-      //     Future.delayed(const Duration(milliseconds: 800), () {
-      //       Get.to(()=> HomeScreen());
-      //       init();
-      //     });
-      //   }else{
-      //     showSnackbar("", "Invalid Email or Password");
-      //   }
-      // });
     }else{
       showSnackbar("", "Invalid Email or Password");
     }
 
   }
 
-
- // Signup Function
+  /// Signup Function **/
+  ///
   Future<dynamic> register() async {
     CommonController.to.ProfileData = {"name": name.text, "email": signUpEmail.text, "phone": phone.text, "password": signUpPassword.text};
     if (box.read(Globals.CUSTOMERDATAS) != null){

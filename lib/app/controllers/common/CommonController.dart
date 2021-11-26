@@ -1,7 +1,3 @@
-
-
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
@@ -40,6 +36,7 @@ class CommonController extends GetxController {
     return (isAppOpeningFirstTime == null || isAppOpeningFirstTime == false) ? true : false;
   }
 
+  /// set translations **/
   Locale getLocale() {
     var language = box.read(Globals.LANGUAGE);
     String country="";

@@ -22,7 +22,7 @@ class HomeController extends GetxController {
     _iseditEnabled.value = value;
   }
 
-  // Fetch loggedin customer data function
+  /// Fetch loggedin customer data function **/
   getCustomerData(){
     CommonController.to.ProfileData = box.read(Globals.CURRENTCUSTOMERDATA);
     phone.text = CommonController.to.ProfileData["phone"];
@@ -31,7 +31,7 @@ class HomeController extends GetxController {
     print("datas: ${CommonController.to.ProfileData}");
   }
 
-  // Save edited changes function
+  /// Save edited changes function **/
   saveChanges(){
     var changedData = {"name": name.text, "email": email.text, "phone": phone.text, "password": CommonController.to.ProfileData["password"]};
     CommonController.to.ProfileData = changedData;
@@ -43,7 +43,7 @@ class HomeController extends GetxController {
 
   }
 
-  // Logout function
+  /// Logout function **/
   logout(){
     box.write(Globals.IS_LOGIN, false);
     box.remove(Globals.CURRENTCUSTOMERDATA);

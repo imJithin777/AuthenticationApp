@@ -6,8 +6,6 @@ import 'package:authentication/app/ui/widgets/CommonTextField.dart';
 import 'package:authentication/app/ui/widgets/CommonsizedButton.dart';
 import 'package:authentication/app/ui/widgets/common_scaffold.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 
 class SignUpScreen extends StatelessWidget {
